@@ -1,0 +1,79 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'org.jetbrains.changelog'
+}
+
+apply plugin: 'org.jetbrains.changelog'
+
+changelog {
+    path = "${project.projectDir}/CHANGELOG.md"
+    header = "${-> version.get()} - ${new SimpleDateFormat("yyyy-MM-dd").format(new Date())}"
+    headerParserRegex = ~/(\d+\.\d+\.\d+.+)/
+    itemPrefix = "-"
+    keepUnreleasedSection = true
+    unreleasedTerm = "Unreleased work"
+    groups = ["Features", "Fixed", "Security"]
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+
+    group 'dk.sunepoulsen.tes'
+    version "${project.property('version')}"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    task allWrappers(type: Wrapper) {
+        gradleVersion = "${project.property('gradle.version')}"
+    }
+
+    dependencies {
+        // Lombok
+        compileOnly "org.projectlombok:lombok:${project.property('lombok.version')}"
+        annotationProcessor "org.projectlombok:lombok:${project.property('lombok.version')}"
+
+        // Logging
+        implementation "ch.qos.logback:logback-classic:${project.property('logback.version')}"
+        implementation "org.slf4j:log4j-over-slf4j:${project.property('log4j-over-slf4j.version')}"
+
+        // JUnit
+        //testImplementation "junit:junit:${project.property('junit.version')}"
+
+        // Spock
+        testImplementation "org.codehaus.groovy:groovy-all:${project.property('groovy.version')}"
+        testImplementation "org.spockframework:spock-core:${project.property('spock-core.version')}"
+        testImplementation "cglib:cglib-nodep:${project.property('cglib-nodep.version')}"
+        testImplementation "org.objenesis:objenesis:${project.property('objenesis.version')}"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+project('tes-spring-boot-template-component-tests') {
+    test {
+        onlyIf {
+            project.hasProperty('component-tests')
+        }
+    }
+}
+
+project('tes-spring-boot-template-stress-tests') {
+    test {
+        onlyIf {
+            project.hasProperty('stress-tests')
+        }
+    }
+}

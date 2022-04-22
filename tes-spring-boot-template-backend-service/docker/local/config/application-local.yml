@@ -1,0 +1,19 @@
+# ===================================================================
+#                   General configuration
+# ===================================================================
+
+logging:
+  level:
+    dk.sunepoulsen.tes.springboot: INFO
+
+# ===================================================================
+#                   Spring configuration
+# ===================================================================
+
+spring:
+  datasource:
+    url: 'jdbc:postgresql://tes-spring-boot-template-db:5432/templates'
+    username: 'templates'
+    password: 'jukilo90'
+    initialize: false
+    driver-class-name: 'org.postgresql.Driver'

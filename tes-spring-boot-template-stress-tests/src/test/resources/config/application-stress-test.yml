@@ -1,0 +1,19 @@
+# ===================================================================
+#                   General configuration
+# ===================================================================
+
+logging:
+  level:
+    dk.sunepoulsen.tes.springboot: INFO
+
+# ===================================================================
+#                   Spring configuration
+# ===================================================================
+
+spring:
+  datasource:
+    url: 'jdbc:postgresql://postgres:5432/stress-test'
+    username: 'template'
+    password: 'jukilo90'
+    initialize: false
+    driver-class-name: 'org.postgresql.Driver'

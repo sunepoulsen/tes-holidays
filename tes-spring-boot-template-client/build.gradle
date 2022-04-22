@@ -1,0 +1,13 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+dependencies {
+    // Tech Easy Solutions
+    implementation "dk.sunepoulsen.tes:tes-rest-models:${project.property('tes-rest-models.version')}"
+    implementation "dk.sunepoulsen.tes:tes-rest-integrations:${project.property('tes-rest-integrations.version')}"
+
+    // Spring Boot
+    implementation "org.springdoc:springdoc-openapi-ui:${project.property('springdoc-openapi.version')}"
+}

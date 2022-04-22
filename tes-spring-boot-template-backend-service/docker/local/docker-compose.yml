@@ -1,0 +1,21 @@
+version: "2"
+services:
+  tes-spring-boot-template-db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=templates
+      - POSTGRES_USER=templates
+      - POSTGRES_PASSWORD=jukilo90
+    ports:
+      - "5432"
+
+  tes-spring-boot-template-service:
+    image: tes-spring-boot-template-backend-service:1.0.0-SNAPSHOT
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,address=8000,suspend=n,server=y
+    ports:
+      - "8080"
+      - "8000"
+    volumes:
+      - "./config/application-local.yml:/app/resources/application-local.yml"

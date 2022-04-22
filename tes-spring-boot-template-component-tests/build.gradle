@@ -1,0 +1,18 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    // Template Dependencies
+    implementation project(':tes-spring-boot-template-client')
+
+    // Tech Easy Solutions
+    implementation "dk.sunepoulsen.tes:tes-rest-models:${project.property('tes-rest-models.version')}"
+    implementation "dk.sunepoulsen.tes:tes-docker-containers:${project.property('tes-docker-containers.version')}"
+
+    implementation platform("org.testcontainers:testcontainers-bom:${project.property('org-testcontainers.version')}")
+    testImplementation 'org.testcontainers:testcontainers'
+
+    // Database Drivers
+    implementation 'org.postgresql:postgresql:42.3.1'
+}
