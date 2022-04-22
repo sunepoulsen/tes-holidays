@@ -5,6 +5,7 @@
 logging:
   level:
     dk.sunepoulsen.tes.springboot: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 
 requests:
   logging:
@@ -21,3 +22,16 @@ springdoc:
   model-converters:
     pageable-converter:
       enabled: true
+
+# ===================================================================
+#                   Spring configuration
+# ===================================================================
+
+spring:
+  liquibase:
+    change-log: 'classpath:/db/changelog/changelog.xml'
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true

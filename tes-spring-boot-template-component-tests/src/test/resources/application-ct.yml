@@ -4,7 +4,7 @@
 
 logging:
   level:
-    dk.sunepoulsen.tes.springboot: INFO
+    dk.sunepoulsen.tes.springboot: DEBUG
 
 # ===================================================================
 #                   Spring configuration
@@ -12,8 +12,8 @@ logging:
 
 spring:
   datasource:
-    url: 'jdbc:postgresql://tes-spring-boot-template-db:5432/templates'
-    username: 'templates'
+    url: 'jdbc:postgresql://postgres:5432/ct'
+    username: 'template'
     password: 'jukilo90'
     initialize: false
     driver-class-name: 'org.postgresql.Driver'
