@@ -1,0 +1,15 @@
+pluginManagement {
+    plugins {
+        id 'org.jetbrains.changelog' version "${jetbrainsChangelogVersion}"
+        id 'org.springframework.boot' version "${springBootPluginVersion}"
+        id 'io.spring.dependency-management' version "${springDependencyPluginVersion}"
+        id 'com.google.cloud.tools.jib' version "${jibPluginVersion}"
+    }
+}
+
+rootProject.name = 'tes-spring-boot-template-backend'
+
+include 'tes-spring-boot-template-backend-service'
+include 'tes-spring-boot-template-component-tests'
+include 'tes-spring-boot-template-stress-tests'
+

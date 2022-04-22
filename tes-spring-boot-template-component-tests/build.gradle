@@ -1,0 +1,11 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    // Tech Easy Solutions
+    implementation "dk.sunepoulsen.tes:tes-docker-containers:${project.property('tes-docker-containers.version')}"
+
+    implementation platform("org.testcontainers:testcontainers-bom:${project.property('org-testcontainers.version')}")
+    testImplementation 'org.testcontainers:testcontainers'
+}

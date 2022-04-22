@@ -1,0 +1,23 @@
+# ===================================================================
+#                   General configuration
+# ===================================================================
+
+logging:
+  level:
+    dk.sunepoulsen.tes.springboot: INFO
+
+requests:
+  logging:
+    include-query-string: True
+    include-headers: False
+
+# ===================================================================
+#                   Swagger configuration
+# ===================================================================
+
+springdoc:
+  show-actuator: true
+  default-produces-media-type: 'application/json'
+  model-converters:
+    pageable-converter:
+      enabled: true
