@@ -62,7 +62,7 @@ subprojects {
     }
 }
 
-project('tes-spring-boot-template-component-tests') {
+project('tes-holidays-component-tests') {
     test {
         onlyIf {
             project.hasProperty('component-tests')
@@ -70,7 +70,7 @@ project('tes-spring-boot-template-component-tests') {
     }
 }
 
-project('tes-spring-boot-template-stress-tests') {
+project('tes-holidays-stress-tests') {
     test {
         onlyIf {
             project.hasProperty('stress-tests')

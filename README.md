@@ -1,10 +1,10 @@
-# TES Spring Boot dk.sunepoulsen.tes.library.template.Template Backend
+# TES Holidays Backend
 
-TODO: General description of this repository.
+TES Holidays Backend is a microservice that stores and holds holidays in a database. 
 
 ## Purpose
 
-TODO: Describe the purpose of this backend
+The purpose is to provide a general microservice that can be used in solutions that require management of holidays. 
 
 ## REST Endpoints
 
@@ -29,16 +29,33 @@ expected to be the normal cycle for daily development.
 
 ### Component tests
 
+The component test is placed in the `tes-holidays-component-tests` subproject.
+
 To run the component tests:
 
 ```
-./gradlew -Pcomponent-tests :tes-spring-boot-template-component-tests:check
+./gradlew -Pcomponent-tests :tes-features-component-tests:check
 ```
 
 ### Stress tests
 
+The stress test is placed in the `tes-holidays-stress-tests` subproject.
+
+#### JMeter
+
+The stress test is generated with [JMeter](https://jmeter.apache.org/) version 5.4.3. Its required to have a version 
+of jmeter installed to be able to run the stress tests.
+
+#### Running
+
 To run the stress tests:
 
 ```
-./gradlew -Pstress-tests :tes-spring-boot-template-stress-tests:check
+./gradlew -Pstress-tests :tes-features-stress-tests:check
+```
+
+To run the stress tests with the local profile:
+
+```
+./gradlew -Pstress-tests :tes-features-stress-tests:check -Dstress.test.profile=local
 ```

@@ -7,10 +7,9 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'tes-spring-boot-template-backend'
+rootProject.name = 'tes-holidays-backend'
 
-include 'tes-spring-boot-template-client'
-include 'tes-spring-boot-template-backend-service'
-include 'tes-spring-boot-template-component-tests'
-include 'tes-spring-boot-template-stress-tests'
-
+include 'tes-holidays-client'
+include 'tes-holidays-backend-service'
+include 'tes-holidays-component-tests'
+include 'tes-holidays-stress-tests'

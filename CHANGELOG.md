@@ -9,12 +9,14 @@ Adhere to the following format:
 `- [Name of Jira-story or subtask](link to Jira-story): Description of the completed work`
 Example-entry:
 
-- [CRS-6104](https://jira.ccta.dk/browse/CRS-6104): Service for unpacking a FATCA zip file.
+- [TES-17](https://sunepoulsen.atlassian.net/browse/TES-17): Create basic holiday service from our template
 
 For release-dates, use date-format: YYYY-MM-DD
 
 ## Unreleased work
 ### Features
+
+- [TES-17](https://sunepoulsen.atlassian.net/browse/TES-17): Create basic holiday service from our template
 
 ### Fixed
 
