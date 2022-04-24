@@ -1,0 +1,37 @@
+# ===================================================================
+#                   General configuration
+# ===================================================================
+
+logging:
+  level:
+    dk.sunepoulsen.tes.springboot: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+requests:
+  logging:
+    include-query-string: True
+    include-headers: False
+
+# ===================================================================
+#                   Swagger configuration
+# ===================================================================
+
+springdoc:
+  show-actuator: true
+  default-produces-media-type: 'application/json'
+  model-converters:
+    pageable-converter:
+      enabled: true
+
+# ===================================================================
+#                   Spring configuration
+# ===================================================================
+
+spring:
+  liquibase:
+    change-log: 'classpath:/db/changelog/changelog.xml'
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
