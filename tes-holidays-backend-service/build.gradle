@@ -1,3 +1,5 @@
+import com.sun.java.accessibility.util.AWTEventMonitor
+
 plugins {
     id 'groovy'
     id 'java'
@@ -40,6 +42,17 @@ dependencies {
 jib {
     from {
         image = 'eclipse-temurin:17-jre'
+    }
+
+    container {
+        jvmFlags = [
+                '-Dcom.sun.management.jmxremote',
+                '-Dcom.sun.management.jmxremote.port=9010',
+                '-Dcom.sun.management.jmxremote.local.only=false',
+                '-Dcom.sun.management.jmxremote.authenticate=false',
+                '-Dcom.sun.management.jmxremote.ssl=false'
+            ]
+        ports = ['8080', '9010']
     }
 }
 

@@ -16,6 +16,6 @@ services:
       - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,address=8000,suspend=n,server=y
     ports:
       - "8080"
-      - "8000"
+      - "9010"
     volumes:
       - "./config/application-local.yml:/app/resources/application-local.yml"
